@@ -76,7 +76,19 @@ EOF
 systemctl daemon-reload
 systemctl restart getty@tty1.service
 
+    # 네트워크
+    cat <<EOF > /etc/netplan/01-adapter.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth:
+      match:
+        name: '*'
+      dhcp4: true
+EOF
 
+netplan apply
 }
 
 # Used to version the configuration.  If breaking changes occur, manual
