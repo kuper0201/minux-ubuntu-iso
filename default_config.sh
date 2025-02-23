@@ -62,8 +62,8 @@ function customize_image() {
         hitori
 
     git clone https://github.com/kuper0201/minux-ubuntu-scripts
-    mv minux-ubuntu-scripts/* /root
-    chmod +x /root/*.sh
+    chmod +x minux-ubuntu-scripts/*
+    mv minux-ubuntu-scripts/* /usr/local/bin
 
     # 자동 로그인
     mkdir -p /etc/systemd/system/getty@tty1.service.d/
@@ -75,6 +75,8 @@ EOF
 
 systemctl daemon-reload
 systemctl restart getty@tty1.service
+
+
 }
 
 # Used to version the configuration.  If breaking changes occur, manual
