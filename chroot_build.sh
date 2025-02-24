@@ -191,12 +191,12 @@ set default="0"
 set timeout=30
 
 menuentry "Install Minux" {
-    linux /casper/vmlinuz boot=casper nopersistent toram quiet splash --- text
+    linux /casper/vmlinuz boot=casper nopersistent toram quiet --- text
     initrd /casper/initrd
 }
 
 menuentry "Check disc for defects" {
-    linux /casper/vmlinuz boot=casper integrity-check quiet splash ---
+    linux /casper/vmlinuz boot=casper integrity-check quiet ---
     initrd /casper/initrd
 }
 
